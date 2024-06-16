@@ -78,4 +78,9 @@ $service_locator->register('driver', function ($locator) {
     return new Driver('John Doe', $car);
 });
 
-print_r($service_locator);
+
+$driver_car = $service_locator->get('driver');
+echo $driver_car->driveCar() . "\n\n";
+
+$car = $service_locator->get('car');
+echo $car->drive();
